@@ -3,6 +3,7 @@ import Nav from './NavBar';
 import { makeStyles} from '@material-ui/core/styles';
 import {Paper ,TextField,Button,CircularProgress} from '@material-ui/core';
 //import { CenterFocusStrong } from '@material-ui/icons';
+import BarChart from './barChart';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
   },
   Circular:{
     marginTop:10,
+  },
+  Chart:{
+    width: '100%',
+    minHeight:'890px',
   }
 }));
 
@@ -28,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   return (
-
+<div>
     <div className={classes.root}>
       <Nav />
       <Paper elevation={3} className={classes.paper} >
@@ -44,7 +49,12 @@ function App() {
         </form>
         <CircularProgress className={classes.Circular} value={50} />
       </Paper>
+
+        
     
+    </div>
+    <BarChart className={classes.Chart}/>
+
     </div>
 
 
